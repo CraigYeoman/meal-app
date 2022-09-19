@@ -1,12 +1,14 @@
-import { useContext } from "react"
-import { AppContext } from "../context"
+import { useGlobalContext } from "../context"
 
 const Meals = () => {
-    const context = useContext(AppContext);
-    console.log(context)
-    return (
-        <h1>Meals</h1>
-    )
+     const { meals } = useGlobalContext();
+    
+    return <section>
+            {meals.map((singleMeal) => {
+                console.log(singleMeal)
+                return <h4>single meals</h4>
+            })}
+        </section>
 }
 
 export default Meals
