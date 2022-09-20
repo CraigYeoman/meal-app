@@ -6,7 +6,7 @@ const Meals = () => {
     return <section>
             {meals.map((singleMeal) => {
                 console.log(singleMeal)
-                return <h4>single meals</h4>
+                return <h4>single Meal</h4>
             })}
         </section>
 }

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const AppContext = React.createContext()
 
-const allMealsURL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata';
+const allMealsURL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=a';
 const randomMealURL = 'https://www.themealdb.com/api/json/v1/1/random.php';
 
 const AppProvider = ({children}) => {
@@ -24,7 +24,9 @@ const AppProvider = ({children}) => {
         fetchMeals(allMealsURL)
     },[])
     return (
-        <AppContext.Provider value={{ meals }}>
+        <AppContext.Provider 
+        value={{ meals }}
+        >
             {children}
         </AppContext.Provider>
     )
@@ -35,9 +37,3 @@ const useGlobalContext = () => {
 }
 
 export { AppContext, AppProvider, useGlobalContext}
-
-// Search meal by name
-// https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
-
-// Random
-// https://www.themealdb.com/api/json/v1/1/random.php
